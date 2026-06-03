@@ -9,8 +9,8 @@
 --
 -- EXPECTED PROJECT PATHS (relative to repo root):
 --   SQL:  sql/duckdb/case_retail_bootstrap.sql
---   CSV:  data/retail/store.csv
---   CSV:  data/retail/sale.csv
+--   CSV:  data/raw/retail/store.csv
+--   CSV:  data/raw/retail/sale.csv
 --   DB:   artifacts/duckdb/retail.duckdb
 --
 --
@@ -99,12 +99,12 @@ CREATE TABLE IF NOT EXISTS sale (
 -- If we used SQLite, we would load data using Python and pandas.
 -- Load the parent (independent) table first.
 COPY store
-FROM 'data/retail/store.csv'
+FROM 'data/raw/retail/store.csv'
 (HEADER, DELIMITER ',', QUOTE '"', ESCAPE '"');
 
 -- Load the child (dependent) table second.
 COPY sale
-FROM 'data/retail/sale.csv'
+FROM 'data/raw/retail/sale.csv'
 (HEADER 1, DELIMITER ',', QUOTE '"', ESCAPE '"');
 
 --

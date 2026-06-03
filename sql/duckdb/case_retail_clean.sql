@@ -12,8 +12,8 @@
 --
 -- EXPECTED PROJECT PATHS (relative to repo root):
 --   SQL:  sql/duckdb/case_retail_clean.sql
---   CSV:  data/retail/store.csv
---   CSV:  data/retail/sale.csv
+--   CSV:  data/raw/retail/store.csv
+--   CSV:  data/raw/retail/sale.csv
 --   DB:   artifacts/duckdb/retail.duckdb
 --
 --

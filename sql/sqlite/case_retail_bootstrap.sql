@@ -9,8 +9,8 @@
 --
 -- EXPECTED PROJECT PATHS (relative to repo root):
 --   SQL:  sql/sqlite/case_retail_bootstrap.sql
---   CSV:  data/retail/store.csv
---   CSV:  data/retail/sale.csv
+--   CSV:  data/raw/retail/store.csv
+--   CSV:  data/raw/retail/sale.csv
 --   DB:   artifacts/sqlite/retail.sqlite
 --
 --
