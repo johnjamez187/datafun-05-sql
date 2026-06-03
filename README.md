@@ -37,7 +37,7 @@ You will run the retail example, then implement the same pipeline for a domain y
 
 You'll work with just these areas:
 
-- **data/raw/*** - raw CSV input files
+- **data/raw/\*** - raw CSV input files
 - **data/processed/** - processed data outputs, if created
 - **artifacts/** - generated database files, logs, or reports
 - **docs/** - the project narrative and documentation
@@ -45,7 +45,6 @@ You'll work with just these areas:
 - **src/datafun/** - Python orchestration scripts
 - **pyproject.toml** - update project metadata
 - **zensical.toml** - update documentation site metadata
-
 
 ## Instructions (pro-analytics-02)
 
