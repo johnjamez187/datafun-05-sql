@@ -62,8 +62,6 @@ Skills learned with SQLite and DuckDB transfer directly to:
 The SQL concepts are the same.
 Only scale and deployment differ.
 
-
-
 ## SQLite: The Embedded Relational Database
 
 SQLite is:
@@ -86,7 +84,6 @@ SQLite emphasizes:
 - portability
 
 For many applications, it replaces the need for a server database.
-
 
 ## Use Cases
 

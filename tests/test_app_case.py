@@ -9,16 +9,16 @@
 # - pytest running from project root
 #
 # Run:
-#   uv run pytest
+#   uv run python -m pytest
 
-from datafun_05_sql import case_duckdb_retail, case_sqlite_retail
+from datafun import app_retail_duckdb_case, app_retail_sqlite_case
 
 
-def test_case_duckdb_retail_exists() -> None:
+def test_app_retail_duckdb_case_exists() -> None:
     """Test that the duckdb retail case module exists."""
-    assert case_duckdb_retail is not None
+    assert app_retail_duckdb_case is not None
 
 
-def test_case_sqlite_retail_exists() -> None:
+def test_app_retail_sqlite_case_exists() -> None:
     """Test that the sqlite retail case module exists."""
-    assert case_sqlite_retail is not None
+    assert app_retail_sqlite_case is not None

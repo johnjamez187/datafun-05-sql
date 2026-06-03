@@ -3,13 +3,15 @@
 This glossary defines **core vocabulary** used in Project 05 and beyond.
 
 You are not expected to memorize these terms.
-You _are_ expected to recognize them, use them correctly, and know when to ask good questions about them.
+You _are_ expected to recognize them, use them correctly,
+and know when to ask good questions about them.
 
 These terms may be frequently used in professional work.
 
 ## Relational Data
 
-**Relational data** - Data organized into tables (rows and columns) with defined relationships between tables.
+**Relational data** - Data organized into tables (rows and columns)
+with defined relationships between tables.
 
 ## Table Structure
 
@@ -31,19 +33,19 @@ These terms may be frequently used in professional work.
 
 **SQL** - A declarative language used to query and manipulate relational data.
 
-**Declarative Language** - A language where you describe _what_ result you want, not _how_ to compute it.
+**Declarative Language** - A language where you describe
+_what_ result you want, not _how_ to compute it.
 
 ## Core SQL Concepts
 
-| Clause      | Purpose                                      |
-|-------------|----------------------------------------------|
-| **SELECT**  | Chooses which columns to return.             |
-| **FROM**    | Specifies the table(s) being queried.        |
-| **WHERE**   | Filters rows based on conditions.            |
-| **GROUP BY**| Groups rows so aggregate functions can be applied. |
-| **ORDER BY**| Sorts query results.                         |
-| **LIMIT**   | Restricts the number of rows returned.       |
-
+| Clause       | Purpose                                            |
+| ------------ | -------------------------------------------------- |
+| **SELECT**   | Chooses which columns to return.                   |
+| **FROM**     | Specifies the table(s) being queried.              |
+| **WHERE**    | Filters rows based on conditions.                  |
+| **GROUP BY** | Groups rows so aggregate functions can be applied. |
+| **ORDER BY** | Sorts query results.                               |
+| **LIMIT**    | Restricts the number of rows returned.             |
 
 ## Aggregation
 
