@@ -116,6 +116,7 @@ For best results, follow the detailed instructions in
 ```shell
 uv self update
 uv python pin 3.14
+uv lock --upgrade
 uv sync --extra dev --extra docs --upgrade
 
 uvx pre-commit install
