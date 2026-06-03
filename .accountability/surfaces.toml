@@ -20,10 +20,6 @@
 # reliability, instructional expectations, or downstream consequences
 # depend on it.
 #
-# WHY: This file identifies repository surfaces where technical edits can
-# change the instructional contract, student expectations, data meaning,
-# or reproducibility of the project.
-#
 # BROADER LEARNING CONTEXT: This repository treats AI governance as a
 # practical professional skill. Analysts may use AI to accelerate work,
 # but responsible use includes knowing where delegated agency should be
@@ -31,6 +27,10 @@
 # accountable for the final artifact. These are the same issues being
 # wrestled with across the industry, where they are concrete,
 # immediate, and significant.
+#
+# WHY: This file identifies repository surfaces where technical edits can
+# change the instructional contract, student expectations, data meaning,
+# or reproducibility of the project.
 #
 # NOTE: This is not a security policy. It is a review guide for changes
 # that should receive human attention before being accepted.
