@@ -39,9 +39,9 @@ LOG: logging.Logger = get_logger("P05", level="DEBUG")
 
 ROOT_DIR: Final[Path] = Path.cwd()
 
-DATA_RAW_DIR = ROOT_DIR / "data" / "raw" / "retail"
-DATA_PROCESSED_DIR = ROOT_DIR / "data" / "processed" / "retail"
-ARTIFACTS_DIR = ROOT_DIR / "artifacts" / "sqlite"
+DATA_RAW_DIR: Final[Path] = ROOT_DIR / "data" / "raw" / "retail"
+DATA_PROCESSED_DIR: Final[Path] = ROOT_DIR / "data" / "processed" / "retail"
+ARTIFACTS_DIR: Final[Path] = ROOT_DIR / "artifacts" / "sqlite"
 SQL_DIR: Final[Path] = ROOT_DIR / "sql" / "sqlite"
 
 STORE_CSV = DATA_RAW_DIR / "store.csv"
