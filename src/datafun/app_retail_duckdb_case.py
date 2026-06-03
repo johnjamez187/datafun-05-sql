@@ -36,14 +36,14 @@ LOG: logging.Logger = get_logger("P05", level="DEBUG")
 
 ROOT_DIR: Final[Path] = Path.cwd()
 
-DATA_RAW_DIR = ROOT_DIR / "data" / "raw" / "retail"
-DATA_PROCESSED_DIR = ROOT_DIR / "data" / "processed" / "retail"
-ARTIFACTS_DIR = ROOT_DIR / "artifacts" / "duckdb"
+DATA_RAW_DIR: Final[Path] = ROOT_DIR / "data" / "raw" / "retail"
+DATA_PROCESSED_DIR: Final[Path] = ROOT_DIR / "data" / "processed" / "retail"
+ARTIFACTS_DIR: Final[Path] = ROOT_DIR / "artifacts" / "duckdb"
 SQL_DIR: Final[Path] = ROOT_DIR / "sql" / "duckdb"
 
-STORE_CSV = DATA_RAW_DIR / "store.csv"
-SALE_CSV = DATA_RAW_DIR / "sale.csv"
-DB_PATH = ARTIFACTS_DIR / "retail.duckdb"
+STORE_CSV: Final[Path] = DATA_RAW_DIR / "store.csv"
+SALE_CSV: Final[Path] = DATA_RAW_DIR / "sale.csv"
+DB_PATH: Final[Path] = ARTIFACTS_DIR / "retail.duckdb"
 
 # === DECLARE HELPER FUNCTION:  READ SQL FROM PATH ===
 
