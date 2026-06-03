@@ -44,9 +44,9 @@ DATA_PROCESSED_DIR: Final[Path] = ROOT_DIR / "data" / "processed" / "retail"
 ARTIFACTS_DIR: Final[Path] = ROOT_DIR / "artifacts" / "sqlite"
 SQL_DIR: Final[Path] = ROOT_DIR / "sql" / "sqlite"
 
-STORE_CSV = DATA_RAW_DIR / "store.csv"
-SALE_CSV = DATA_RAW_DIR / "sale.csv"
-DB_PATH = ARTIFACTS_DIR / "retail.sqlite"
+STORE_CSV: Final[Path] = DATA_RAW_DIR / "store.csv"
+SALE_CSV: Final[Path] = DATA_RAW_DIR / "sale.csv"
+DB_PATH: Final[Path] = ARTIFACTS_DIR / "retail.sqlite"
 
 # === DECLARE HELPER FUNCTION:  READ SQL FROM PATH ===
 
