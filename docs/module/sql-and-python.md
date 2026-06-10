@@ -102,3 +102,17 @@ This allows analysts to:
 - use the best tool at each step
 - stay flexible
 - work efficiently
+
+## SQL vs Python as a Tool
+
+| Use SQL for                           | Use Python for                                                 |
+| ------------------------------------- | -------------------------------------------------------------- |
+| Pulling data from relational tables   | API calls and non-database data ingestion                      |
+| Joins, filters, grouping, aggregation | File handling, automation, orchestration glue                  |
+| Window functions                      | Complex procedural logic                                       |
+| Views, CTEs, data marts               | Statistical modeling                                           |
+| Report-ready datasets                 | Machine learning                                               |
+| Data quality checks in tables         | Custom validation frameworks                                   |
+| Set-based transformations             | Simulation, optimization, custom algorithms                    |
+| Standard metrics                      | Complex visualizations and publication-quality charts          |
+| Producing clean tabular outputs       | Combining SQL output with documents, web apps, PDFs, notebooks |
