@@ -103,7 +103,7 @@ This allows analysts to:
 - stay flexible
 - work efficiently
 
-## SQL vs Python as a Tool
+## Typical Roles
 
 | Use SQL for                           | Use Python for                                                 |
 | ------------------------------------- | -------------------------------------------------------------- |
