@@ -104,8 +104,8 @@ id = "example-pipeline-scripts"
 name = "Example pipeline scripts"
 description = "Runnable Python scripts students copy, inspect, modify, and use as models for their own domain pipelines."
 paths = [
-    "src/datafun/app_retail_duckdb_case.py",
-    "src/datafun/app_retail_sqlite_case.py",
+    "src/datafun/app_retail_duckdb.py",
+    "src/datafun/app_retail_sqlite.py",
 ]
 risk = "high"
 ai_authority = "assist-only"
