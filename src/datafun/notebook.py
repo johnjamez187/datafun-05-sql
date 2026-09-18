@@ -78,9 +78,8 @@ so I can organize my thinking and my app.
 
 import marimo
 
-__generated_with = "0.24.0"
+__generated_with = "0.24.2"
 app = marimo.App(width="medium")
-
 
 with app.setup:
     from pathlib import Path
@@ -257,7 +256,95 @@ def _run_query(connection, region_dropdown):
     )
 
     # Return the result dataframe and the SQL query for inspection.
-    return result_df, sql_query
+    return (result_df,)
+
+
+@app.cell
+def _(connection):
+    regional_summary_query = """
+    SELECT
+        r.region_name,
+        COUNT(DISTINCT s.store_id) AS store_count,
+        COUNT(e.employee_id) AS employee_count,
+        ROUND(
+            COUNT(e.employee_id) * 1.0 / COUNT(DISTINCT s.store_id),
+            2
+        ) AS avg_employees_per_store
+    FROM regions AS r
+    JOIN stores AS s
+        ON r.region_id = s.region_id
+    LEFT JOIN employees AS e
+        ON s.store_id = e.store_id
+    GROUP BY
+        r.region_name
+    ORDER BY
+        r.region_name;
+    """
+
+    regional_summary_df = pd.read_sql_query(
+        regional_summary_query,
+        connection,
+    )
+
+    regional_summary_df
+    return (regional_summary_df,)
+
+
+@app.cell
+def _():
+    metric_dropdown = mo.ui.dropdown(
+        options={
+            "Total Stores": "store_count",
+            "Total Employees": "employee_count",
+            "Average Employees per Store": "avg_employees_per_store",
+        },
+        value="Average Employees per Store",
+        label="Choose data to display:",
+    )
+
+    metric_dropdown
+    return (metric_dropdown,)
+
+
+@app.cell
+def _(metric_dropdown, regional_summary_df):
+    selected_metric = metric_dropdown.value
+
+    metric_labels = {
+        "store_count": "Total Stores",
+        "employee_count": "Total Employees",
+        "avg_employees_per_store": "Average Employees per Store",
+    }
+
+    selected_label = metric_labels[selected_metric]
+
+    interactive_chart = (
+        alt.Chart(regional_summary_df)
+        .mark_bar()
+        .encode(
+            x=alt.X(
+                "region_name:N",
+                title="Region",
+                sort=alt.EncodingSortField(
+                    field=selected_metric,
+                    order="descending",
+                ),
+            ),
+            y=alt.Y(f"{selected_metric}:Q", title=selected_label),
+            tooltip=[
+                alt.Tooltip("region_name:N", title="Region"),
+                alt.Tooltip(f"{selected_metric}:Q", title=selected_label),
+            ],
+        )
+        .properties(
+            title=f"{selected_label} by Region",
+            width=600,
+            height=400,
+        )
+    )
+
+    interactive_chart
+    return
 
 
 @app.cell
@@ -272,6 +359,7 @@ def _show_selection(region_dropdown):
         (passed to SQL as a bound parameter).
         """
     )
+    return
 
 
 @app.cell
@@ -302,6 +390,7 @@ def _show_df_table_and_chart(region_dropdown, result_df):
             employee_chart,
         ]
     )
+    return
 
 
 if __name__ == "__main__":

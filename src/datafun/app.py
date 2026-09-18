@@ -123,13 +123,13 @@ The shared keys connect information stored in different tables.
 # === DEFINE THE ANALYTICAL QUESTION ===
 
 CUSTOM_QUERY_DECISION: Final[str] = r"""
-I want to compare the number of employees working at each store.
-The result should have one row per store.
+I want to compare staffing levels across business regions.
 
-The information I need requires all three tables:
- - region name is in regions,
- - store name is in stores,
- - employee info is in employees.
+For each region, I will calculate the number of stores,
+the total number of employees, and the average number
+of employees per store.
+
+The result should have one row per region.
 """
 
 # === WRITE THE SQL QUERY ===
@@ -137,32 +137,34 @@ The information I need requires all three tables:
 CUSTOM_SQL_QUERY: Final[str] = """
 SELECT
     r.region_name,
-    s.store_name,
-    COUNT(e.employee_id) AS employee_count
+    COUNT(DISTINCT s.store_id) AS store_count,
+    COUNT(e.employee_id) AS employee_count,
+    ROUND(
+        COUNT(e.employee_id) * 1.0 / COUNT(DISTINCT s.store_id),
+        2
+    ) AS avg_employees_per_store
 FROM regions AS r
 JOIN stores AS s
     ON r.region_id = s.region_id
 LEFT JOIN employees AS e
     ON s.store_id = e.store_id
 GROUP BY
-    r.region_name,
-    s.store_name
+    r.region_name
 ORDER BY
-    employee_count DESC;
+    avg_employees_per_store DESC;
 """
 
 # === CHOOSE A VISUALIZATION ===
 
 CUSTOM_CHART_DECISION: Final[str] = r"""
-The query result has one numeric value
-(employee count) for each store.
+The query calculates the average number of
+employees per store for each region.
 
-A bar chart works for comparing
-a numeric value across named categories.
-Every pandas df has a
-plot.box() method for creating box plots.
+A bar chart works well for comparing
+average staffing levels across regions.
+The height of each bar represents the average
+number of employees per store in that region.
 """
-
 
 # === DEFINE THE MAIN FUNCTION ===
 
@@ -267,15 +269,19 @@ def main() -> None:
     LOG.info(CUSTOM_CHART_DECISION)
 
     employee_ax = result_df.plot.bar(
-        x="store_name",
-        y="employee_count",
+        x="region_name",
+        y="avg_employees_per_store",
         legend=False,
+        figsize=(10, 6),
     )
 
     # CUSTOM: The analyst can customize the returned Matplotlib Axes object.
-    employee_ax.set_title("Employees by Store")
-    employee_ax.set_xlabel("Store")
-    employee_ax.set_ylabel("Number of Employees")
+    employee_ax.set_title("Average Employees per Store by Region")
+    employee_ax.set_xlabel("Region")
+    employee_ax.set_ylabel("Average Employees per Store")
+
+    employee_ax.tick_params(axis="x", labelrotation=45)
+    employee_ax.figure.tight_layout()
 
     CHART_DIR.mkdir(parents=True, exist_ok=True)
 
