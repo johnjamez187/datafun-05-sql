@@ -260,6 +260,52 @@ def _run_query(connection, region_dropdown):
 
 
 @app.cell
+def _show_selection(region_dropdown):
+    # === USE MARKDOWN TO SHOW THE CURRENT ANALYTICAL CHOICE ===
+
+    mo.md(
+        f"""
+        ## Employees by Store
+
+        Selected region: **{region_dropdown.value}**
+        (passed to SQL as a bound parameter).
+        """
+    )
+    return
+
+
+@app.cell
+def _show_df_table_and_chart(region_dropdown, result_df):
+    # === DISPLAY THE SQL QUERY RESULT ===
+
+    # Display the result dataframe and chart
+    # side by side (in a horizontal hstack).
+
+    employee_chart = (
+        alt.Chart(result_df)
+        .mark_bar()
+        .encode(  # ty: ignore[unresolved-attribute]
+            x=alt.X("store_name:N", title="Store", sort="-y"),
+            y=alt.Y("employee_count:Q", title="Number of Employees"),
+        )
+        .properties(
+            title=f"Employees by Store - {region_dropdown.value}",
+            width="container",
+        )
+    )
+
+    # Display vertical (stacked) layout of a list of items.
+    # first the df table, then the chart.
+    mo.vstack(
+        [
+            result_df,
+            employee_chart,
+        ]
+    )
+    return
+
+
+@app.cell
 def _(connection):
     regional_summary_query = """
     SELECT
@@ -344,52 +390,6 @@ def _(metric_dropdown, regional_summary_df):
     )
 
     interactive_chart
-    return
-
-
-@app.cell
-def _show_selection(region_dropdown):
-    # === USE MARKDOWN TO SHOW THE CURRENT ANALYTICAL CHOICE ===
-
-    mo.md(
-        f"""
-        ## Employees by Store
-
-        Selected region: **{region_dropdown.value}**
-        (passed to SQL as a bound parameter).
-        """
-    )
-    return
-
-
-@app.cell
-def _show_df_table_and_chart(region_dropdown, result_df):
-    # === DISPLAY THE SQL QUERY RESULT ===
-
-    # Display the result dataframe and chart
-    # side by side (in a horizontal hstack).
-
-    employee_chart = (
-        alt.Chart(result_df)
-        .mark_bar()
-        .encode(  # ty: ignore[unresolved-attribute]
-            x=alt.X("store_name:N", title="Store", sort="-y"),
-            y=alt.Y("employee_count:Q", title="Number of Employees"),
-        )
-        .properties(
-            title=f"Employees by Store - {region_dropdown.value}",
-            width="container",
-        )
-    )
-
-    # Display vertical (stacked) layout of a list of items.
-    # first the df table, then the chart.
-    mo.vstack(
-        [
-            result_df,
-            employee_chart,
-        ]
-    )
     return
 
 
