@@ -55,7 +55,7 @@ or choosing one of the other recommended domains.
 
 This project produces the same results in several useful forms.
 
-- [**Reactive App (marimo)**](https://denisecase.github.io/datafun-05-sql/app/)
+- [**Reactive App (marimo)**](https://johnjamez187.github.io/datafun-05-sql/)
   - run the analysis interactively in a browser
 
 - [**Reactive Notebook (marimo)**](./src/datafun/notebook.py)
@@ -219,7 +219,7 @@ Press `Ctrl c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.
 
 ## Documentation
 
-- [Documentation](https://denisecase.github.io/datafun-05-sql/)
+- [Documentation](https://johnjamez187.github.io/datafun-05-sql/)
 
 ## Data Card
 
