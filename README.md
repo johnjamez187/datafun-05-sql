@@ -236,3 +236,9 @@ Press `Ctrl c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.
 ## License
 
 This project is licensed under the [MIT License](./LICENSE).
+
+
+## Take Ownership
+
+I used the marimo application to allow users to compare regions by;
+Total Store, Total Employees, Average Employees per Store, this populates through a regional bar chart.

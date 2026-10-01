@@ -1,14 +1,21 @@
 {
   "version": "1",
   "metadata": {
-    "marimo_version": "0.24.2",
+    "marimo_version": "0.25.0",
     "script_metadata_hash": "20471874d2fd222de3934fcc13ac4583"
   },
   "cells": [
     {
       "id": "setup",
       "code_hash": "837321f6197e2161fb419d5d419eb1e3",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -27,37 +34,111 @@
     {
       "id": "MJUe",
       "code_hash": "47dc1eeb5865117f2970479464743b85",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "vblA",
       "code_hash": "7373993706301959c6f9594da7323a39",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Database connected and tables loaded.</span></span>"
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "bkHC",
       "code_hash": "2f697c70d8aa8576651fb23081528af9",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='bkHC-0' random-id='ce307d56-d19a-6622-368d-3c31dab19760'><marimo-dropdown data-initial-value='[&quot;Central&quot;]' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eChoose a region&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-options='[&quot;Central&quot;,&quot;East&quot;,&quot;North&quot;,&quot;South&quot;,&quot;West&quot;]' data-allow-select-none='false' data-searchable='false' data-full-width='false' data-disabled='false'></marimo-dropdown></marimo-ui-element>"
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "lEQa",
       "code_hash": "5e4f39873a1051a4ec9a91def3e9a094",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "PKri",
+      "code_hash": "d83e9b925303f63f205ef685fdc8eae8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='PKri-0' random-id='080ad330-ca1a-7a4f-530b-939762d82fa6'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;region_name&#92;&quot;:&#92;&quot;Central&#92;&quot;,&#92;&quot;store_count&#92;&quot;:3,&#92;&quot;employee_count&#92;&quot;:31,&#92;&quot;avg_employees_per_store&#92;&quot;:10.33},{&#92;&quot;region_name&#92;&quot;:&#92;&quot;East&#92;&quot;,&#92;&quot;store_count&#92;&quot;:3,&#92;&quot;employee_count&#92;&quot;:32,&#92;&quot;avg_employees_per_store&#92;&quot;:10.67},{&#92;&quot;region_name&#92;&quot;:&#92;&quot;North&#92;&quot;,&#92;&quot;store_count&#92;&quot;:2,&#92;&quot;employee_count&#92;&quot;:21,&#92;&quot;avg_employees_per_store&#92;&quot;:10.5},{&#92;&quot;region_name&#92;&quot;:&#92;&quot;South&#92;&quot;,&#92;&quot;store_count&#92;&quot;:4,&#92;&quot;employee_count&#92;&quot;:46,&#92;&quot;avg_employees_per_store&#92;&quot;:11.5},{&#92;&quot;region_name&#92;&quot;:&#92;&quot;West&#92;&quot;,&#92;&quot;store_count&#92;&quot;:3,&#92;&quot;employee_count&#92;&quot;:38,&#92;&quot;avg_employees_per_store&#92;&quot;:12.67}]&quot;' data-total-rows='5' data-total-columns='4' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;region_name&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;store_count&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;employee_count&quot;,[&quot;integer&quot;,&quot;int64&quot;]],[&quot;avg_employees_per_store&quot;,[&quot;number&quot;,&quot;float64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "e7d569a5cfa8bcdbb58eefc515d6d615",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='Xref-0' random-id='4077a327-60c5-a89c-7573-1470251fda1a'><marimo-dropdown data-initial-value='[&quot;Average Employees per Store&quot;]' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eChoose data to display:&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-options='[&quot;Total Stores&quot;,&quot;Total Employees&quot;,&quot;Average Employees per Store&quot;]' data-allow-select-none='false' data-searchable='false' data-full-width='false' data-disabled='false'></marimo-dropdown></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "8793539ed9cfc625c9d88ce197d34c16",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/vnd.vegalite.v6+json": "{\n  \"$schema\": \"https://vega.github.io/schema/vega-lite/v6.4.1.json\",\n  \"config\": {\n    \"view\": {\n      \"continuousHeight\": 300,\n      \"continuousWidth\": 300\n    }\n  },\n  \"data\": {\n    \"name\": \"data-548b1a374a236c1e420ed337899f652b\"\n  },\n  \"datasets\": {\n    \"data-548b1a374a236c1e420ed337899f652b\": [\n      {\n        \"avg_employees_per_store\": 10.33,\n        \"employee_count\": 31,\n        \"region_name\": \"Central\",\n        \"store_count\": 3\n      },\n      {\n        \"avg_employees_per_store\": 10.67,\n        \"employee_count\": 32,\n        \"region_name\": \"East\",\n        \"store_count\": 3\n      },\n      {\n        \"avg_employees_per_store\": 10.5,\n        \"employee_count\": 21,\n        \"region_name\": \"North\",\n        \"store_count\": 2\n      },\n      {\n        \"avg_employees_per_store\": 11.5,\n        \"employee_count\": 46,\n        \"region_name\": \"South\",\n        \"store_count\": 4\n      },\n      {\n        \"avg_employees_per_store\": 12.67,\n        \"employee_count\": 38,\n        \"region_name\": \"West\",\n        \"store_count\": 3\n      }\n    ]\n  },\n  \"encoding\": {\n    \"tooltip\": [\n      {\n        \"field\": \"region_name\",\n        \"title\": \"Region\",\n        \"type\": \"nominal\"\n      },\n      {\n        \"field\": \"store_count\",\n        \"title\": \"Total Stores\",\n        \"type\": \"quantitative\"\n      }\n    ],\n    \"x\": {\n      \"field\": \"region_name\",\n      \"sort\": {\n        \"field\": \"store_count\",\n        \"order\": \"descending\"\n      },\n      \"title\": \"Region\",\n      \"type\": \"nominal\"\n    },\n    \"y\": {\n      \"field\": \"store_count\",\n      \"title\": \"Total Stores\",\n      \"type\": \"quantitative\"\n    }\n  },\n  \"height\": 400,\n  \"mark\": {\n    \"type\": \"bar\"\n  },\n  \"title\": \"Total Stores by Region\",\n  \"usermeta\": {\n    \"embedOptions\": {}\n  },\n  \"width\": 600\n}"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
       "code_hash": "41ea126191cb921082729b8d1ad3e12c",
       "outputs": [],
       "console": []
     },
     {
-      "id": "Xref",
+      "id": "RGSE",
       "code_hash": "5e1b241960b3a1efac75cb87f275344f",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><marimo-ui-element object-id='RGSE-0' random-id='eb3ca94d-7017-5627-b3eb-db627de3e5cf'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;region_name&#92;&quot;:&#92;&quot;Central&#92;&quot;,&#92;&quot;store_name&#92;&quot;:&#92;&quot;Prairie Center&#92;&quot;,&#92;&quot;employee_count&#92;&quot;:13},{&#92;&quot;region_name&#92;&quot;:&#92;&quot;Central&#92;&quot;,&#92;&quot;store_name&#92;&quot;:&#92;&quot;Lakeside Commons&#92;&quot;,&#92;&quot;employee_count&#92;&quot;:10},{&#92;&quot;region_name&#92;&quot;:&#92;&quot;Central&#92;&quot;,&#92;&quot;store_name&#92;&quot;:&#92;&quot;River Market&#92;&quot;,&#92;&quot;employee_count&#92;&quot;:8}]&quot;' data-total-rows='3' data-total-columns='3' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;region_name&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;store_name&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;employee_count&quot;,[&quot;integer&quot;,&quot;int64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element><marimo-mime-renderer data-mime='&quot;application/vnd.vegalite.v6+json&quot;' data-data='&quot;{&#92;n  &#92;&quot;&#36;schema&#92;&quot;: &#92;&quot;https://vega.github.io/schema/vega-lite/v6.4.1.json&#92;&quot;,&#92;n  &#92;&quot;config&#92;&quot;: {&#92;n    &#92;&quot;view&#92;&quot;: {&#92;n      &#92;&quot;continuousHeight&#92;&quot;: 300,&#92;n      &#92;&quot;continuousWidth&#92;&quot;: 300&#92;n    }&#92;n  },&#92;n  &#92;&quot;data&#92;&quot;: {&#92;n    &#92;&quot;name&#92;&quot;: &#92;&quot;data-98487680da42d0df203424a55305db74&#92;&quot;&#92;n  },&#92;n  &#92;&quot;datasets&#92;&quot;: {&#92;n    &#92;&quot;data-98487680da42d0df203424a55305db74&#92;&quot;: [&#92;n      {&#92;n        &#92;&quot;employee_count&#92;&quot;: 13,&#92;n        &#92;&quot;region_name&#92;&quot;: &#92;&quot;Central&#92;&quot;,&#92;n        &#92;&quot;store_name&#92;&quot;: &#92;&quot;Prairie Center&#92;&quot;&#92;n      },&#92;n      {&#92;n        &#92;&quot;employee_count&#92;&quot;: 10,&#92;n        &#92;&quot;region_name&#92;&quot;: &#92;&quot;Central&#92;&quot;,&#92;n        &#92;&quot;store_name&#92;&quot;: &#92;&quot;Lakeside Commons&#92;&quot;&#92;n      },&#92;n      {&#92;n        &#92;&quot;employee_count&#92;&quot;: 8,&#92;n        &#92;&quot;region_name&#92;&quot;: &#92;&quot;Central&#92;&quot;,&#92;n        &#92;&quot;store_name&#92;&quot;: &#92;&quot;River Market&#92;&quot;&#92;n      }&#92;n    ]&#92;n  },&#92;n  &#92;&quot;encoding&#92;&quot;: {&#92;n    &#92;&quot;x&#92;&quot;: {&#92;n      &#92;&quot;field&#92;&quot;: &#92;&quot;store_name&#92;&quot;,&#92;n      &#92;&quot;sort&#92;&quot;: &#92;&quot;-y&#92;&quot;,&#92;n      &#92;&quot;title&#92;&quot;: &#92;&quot;Store&#92;&quot;,&#92;n      &#92;&quot;type&#92;&quot;: &#92;&quot;nominal&#92;&quot;&#92;n    },&#92;n    &#92;&quot;y&#92;&quot;: {&#92;n      &#92;&quot;field&#92;&quot;: &#92;&quot;employee_count&#92;&quot;,&#92;n      &#92;&quot;title&#92;&quot;: &#92;&quot;Number of Employees&#92;&quot;,&#92;n      &#92;&quot;type&#92;&quot;: &#92;&quot;quantitative&#92;&quot;&#92;n    }&#92;n  },&#92;n  &#92;&quot;mark&#92;&quot;: {&#92;n    &#92;&quot;type&#92;&quot;: &#92;&quot;bar&#92;&quot;&#92;n  },&#92;n  &#92;&quot;title&#92;&quot;: &#92;&quot;Employees by Store - Central&#92;&quot;,&#92;n  &#92;&quot;usermeta&#92;&quot;: {&#92;n    &#92;&quot;embedOptions&#92;&quot;: {}&#92;n  },&#92;n  &#92;&quot;width&#92;&quot;: &#92;&quot;container&#92;&quot;&#92;n}&quot;'></marimo-mime-renderer></div>"
+          }
+        }
+      ],
       "console": []
     }
   ]
