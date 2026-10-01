@@ -119,7 +119,7 @@ change directory (cd) into the new folder,
 and run `code .` to open only this example project in VS Code:
 
 ```shell
-git clone https://github.com/denisecase/datafun-05-sql
+git clone https://github.com/johnjamez187/datafun-05-sql.git
 
 cd datafun-05-sql
 code .
@@ -223,7 +223,7 @@ Press `Ctrl c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.
 
 ## Data Card
 
-- [Palmer Penguins Data Card](./docs/data-card.md)
+- [Retail Data Card](./docs/data-card.md)
 
 ## Annotations
 

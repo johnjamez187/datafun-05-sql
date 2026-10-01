@@ -1,6 +1,6 @@
 """src/datafun/app.py - Project script.
 
-Author: Denise Case
+Author: John James
 Date: 2026-08
 
 HOW TO RUN THIS FILE:
@@ -305,11 +305,11 @@ def main() -> None:
     The SQL query connected information from
     the regions, stores, and employees tables.
 
-    The result has one row per store.
+    The result has one row per region.
 
-    I observed ...
+    I observed that the average number of employees per store varies across regions.
 
-    Based on this result, I would next like to explore ...
+    Based on this result, I would next like to explore the reasons behind the differences in staffing levels.
     """)
 
     LOG.info("-------------------------------")

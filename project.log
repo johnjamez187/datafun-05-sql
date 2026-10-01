@@ -1506,3 +1506,125 @@ number of employees per store in that region.
 2026-09-30 15:41:12 | INFO | P05 | -------------------------------
 2026-09-30 15:41:12 | INFO | P05 | In a script, call plt.show() at the end to display all charts.
 2026-09-30 15:41:12 | INFO | P05 | Close all chart windows (with the close button) to continue.
+2026-10-01 13:45:47 | INFO | P05 | === RUN START ===
+2026-10-01 13:45:47 | INFO | P05 | project=P05 - PYTHON AND SQL
+2026-10-01 13:45:47 | INFO | P05 | repo_dir=datafun-05-sql
+2026-10-01 13:45:47 | INFO | P05 | python=3.14.7
+2026-10-01 13:45:47 | INFO | P05 | os=Windows 11
+2026-10-01 13:45:47 | INFO | P05 | shell=powershell
+2026-10-01 13:45:47 | INFO | P05 | cwd=.
+2026-10-01 13:45:47 | INFO | P05 | github_actions=False
+2026-10-01 13:45:47 | INFO | P05 | ===================================
+2026-10-01 13:45:47 | INFO | P05 | START main()
+2026-10-01 13:45:47 | INFO | P05 | ===================================
+2026-10-01 13:45:47 | INFO | P05 | -------------------------------
+2026-10-01 13:45:47 | INFO | P05 | 01. LOAD the related tables.
+2026-10-01 13:45:47 | INFO | P05 | -------------------------------
+2026-10-01 13:45:47 | INFO | P05 | regions file = data\retail\region.csv
+2026-10-01 13:45:47 | INFO | P05 | stores file = data\retail\store.csv
+2026-10-01 13:45:47 | INFO | P05 | employees file = data\retail\employee.csv
+2026-10-01 13:45:47 | INFO | P05 | Related tables loaded successfully.
+2026-10-01 13:45:47 | INFO | P05 | -------------------------------
+2026-10-01 13:45:47 | INFO | P05 | 02. INSPECT the grain and keys.
+2026-10-01 13:45:47 | INFO | P05 | -------------------------------
+2026-10-01 13:45:47 | INFO | P05 | Regions grain: one business region
+2026-10-01 13:45:47 | INFO | P05 | Stores grain: one store
+2026-10-01 13:45:47 | INFO | P05 | Employees grain: one employee
+2026-10-01 13:45:47 | INFO | P05 | Regions columns: ['region_id', 'region_name']
+2026-10-01 13:45:47 | INFO | P05 | Stores columns: ['store_id', 'store_name', 'region_id', 'store_type', 'square_feet']
+2026-10-01 13:45:47 | INFO | P05 | Employees columns: ['employee_id', 'employee_name', 'store_id', 'role', 'years_employed']
+2026-10-01 13:45:47 | INFO | P05 | 
+The data is stored in three related tables.
+
+One region can have many stores.
+The stores table uses region_id to identify each store's region.
+
+One store can have many employees.
+The employees table uses store_id to identify each employee's store.
+
+The shared keys connect information stored in different tables.
+
+2026-10-01 13:45:47 | INFO | P05 | -------------------------------
+2026-10-01 13:45:47 | INFO | P05 | 03. CREATE a SQLite database.
+2026-10-01 13:45:47 | INFO | P05 | -------------------------------
+2026-10-01 13:45:47 | INFO | P05 | SQLite database = data\retail\business.sqlite
+2026-10-01 13:45:47 | INFO | P05 | SQLite database connection created.
+2026-10-01 13:45:47 | INFO | P05 | -------------------------------
+2026-10-01 13:45:47 | INFO | P05 | 04. LOAD the tables into SQLite.
+2026-10-01 13:45:47 | INFO | P05 | -------------------------------
+2026-10-01 13:45:47 | INFO | P05 | Related tables loaded into SQLite.
+2026-10-01 13:45:47 | INFO | P05 | -------------------------------
+2026-10-01 13:45:47 | INFO | P05 | 05. QUERY across related tables with SQL.
+2026-10-01 13:45:47 | INFO | P05 | -------------------------------
+2026-10-01 13:45:47 | INFO | P05 | 
+I want to compare staffing levels across business regions.
+
+For each region, I will calculate the number of stores,
+the total number of employees, and the average number
+of employees per store.
+
+The result should have one row per region.
+
+2026-10-01 13:45:47 | INFO | P05 | 
+SQL query:
+
+SELECT
+    r.region_name,
+    COUNT(DISTINCT s.store_id) AS store_count,
+    COUNT(e.employee_id) AS employee_count,
+    ROUND(
+        COUNT(e.employee_id) * 1.0 / COUNT(DISTINCT s.store_id),
+        2
+    ) AS avg_employees_per_store
+FROM regions AS r
+JOIN stores AS s
+    ON r.region_id = s.region_id
+LEFT JOIN employees AS e
+    ON s.store_id = e.store_id
+GROUP BY
+    r.region_name
+ORDER BY
+    avg_employees_per_store DESC;
+
+2026-10-01 13:45:47 | INFO | P05 | 
+Query result:
+  region_name  store_count  employee_count  avg_employees_per_store
+0        West            3              38                    12.67
+1       South            4              46                    11.50
+2        East            3              32                    10.67
+3       North            2              21                    10.50
+4     Central            3              31                    10.33
+2026-10-01 13:45:47 | INFO | P05 | -------------------------------
+2026-10-01 13:45:47 | INFO | P05 | 06. VISUALIZE the query result with Python.
+2026-10-01 13:45:47 | INFO | P05 | -------------------------------
+2026-10-01 13:45:47 | INFO | P05 | 
+The query calculates the average number of
+employees per store for each region.
+
+A bar chart works well for comparing
+average staffing levels across regions.
+The height of each bar represents the average
+number of employees per store in that region.
+
+2026-10-01 13:45:47 | INFO | P05 | Chart saved successfully at docs\images\first-chart.png.
+2026-10-01 13:45:47 | INFO | P05 | -------------------------------
+2026-10-01 13:45:47 | INFO | P05 | 07. SUMMARIZE what you found.
+2026-10-01 13:45:47 | INFO | P05 | -------------------------------
+2026-10-01 13:45:47 | INFO | P05 | CUSTOM OBSERVATIONS:
+    The SQL query connected information from
+    the regions, stores, and employees tables.
+
+    The result has one row per region.
+
+    I observed that the average number of employees per store varies across regions.
+
+    Based on this result, I would next like to explore the reasons behind the differences in staffing levels.
+    
+2026-10-01 13:45:47 | INFO | P05 | -------------------------------
+2026-10-01 13:45:47 | INFO | P05 | 08. DISPLAY the visualization.
+2026-10-01 13:45:47 | INFO | P05 | -------------------------------
+2026-10-01 13:45:47 | INFO | P05 | In a script, call plt.show() at the end to display all charts.
+2026-10-01 13:45:47 | INFO | P05 | Close all chart windows (with the close button) to continue.
+2026-10-01 13:45:49 | INFO | P05 | ===================================
+2026-10-01 13:45:49 | INFO | P05 | END main() - Executed successfully!
+2026-10-01 13:45:49 | INFO | P05 | ===================================
